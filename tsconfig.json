@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleDetection": "force",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@monorepo-boilerplate/utils": ["./packages/utils/src"],
+      "@monorepo-boilerplate/app": ["./packages/app/src"]
+    }
+  },
+  "include": [
+    ".eslintrc.js",
+    "babel.config.js",
+    "./**/.babelrc.js",
+    "./packages/**/*.js",
+    "./packages/**/*.ts",
+    "webpack.config.ts",
+    "./examples/**/*.ts"
+  ],
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  }
+}

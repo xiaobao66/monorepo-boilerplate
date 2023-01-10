@@ -1,0 +1,3 @@
+dist
+# 增加校验文件
+!.babelrc.js
