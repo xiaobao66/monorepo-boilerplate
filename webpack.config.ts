@@ -2,13 +2,10 @@ import { Configuration } from 'webpack';
 import WebpackBar from 'webpackbar';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
-import { resolve } from 'path';
 
 export interface EnvOptions {
   mode: 'development' | 'production';
 }
-
-const PACKAGE_ROOT = resolve(__dirname, 'packages');
 
 export default (env: EnvOptions): Configuration => {
   const isDev = env.mode === 'development';
@@ -16,10 +13,6 @@ export default (env: EnvOptions): Configuration => {
   return {
     resolve: {
       extensions: ['...', '.ts'],
-      alias: {
-        '@monorepo-boilerplate/utils': resolve(PACKAGE_ROOT, 'utils/src'),
-        '@monorepo-boilerplate/app': resolve(PACKAGE_ROOT, 'app/src'),
-      },
     },
 
     module: {
